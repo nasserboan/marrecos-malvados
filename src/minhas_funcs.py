@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 def func1(value1:int,value2:int) -> int:
     
@@ -30,3 +31,14 @@ def plot_topo(data):
     ax.set_yticklabels(data.index)
     ax.set_xticklabels(data.columns,rotation=90)
     plt.show()
+
+
+def plot_lm(data):
+    
+    """
+    recebe um dataframe e plota os plots de regressão
+    params:
+        data: dataframe contendo os valores para plotagem
+    """
+    
+    sns.lmplot(x='Rating',y='Positive',col='Category',data=data)
