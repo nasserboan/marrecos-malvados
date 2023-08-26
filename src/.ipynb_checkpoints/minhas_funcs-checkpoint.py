@@ -3,6 +3,15 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 
+def media_de_lista(lista_recebida):
+    
+    tamanho_da_lista = len(lista_recebida)
+    soma_da_lista = sum(lista_recebida)
+    media = soma_da_lista/tamanho_da_lista
+    
+    return media
+
+
 def func1(value1:int,value2:int) -> int:
     
     """
@@ -46,7 +55,6 @@ def plot_lm(data):
     
     
 def plot_ascombe():
-    
 
 
     x = [10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5]
@@ -75,7 +83,7 @@ def plot_ascombe():
 
         # linear regression
         p1, p0 = np.polyfit(x, y, deg=1)  # slope, intercept
-        ax.axline(xy1=(0, p0), slope=p1, color='r', lw=2)
+        ax.axline(xy1=(0, p0), slope=p1, color='black', lw=2)
 
         # add text box for the statistics
         stats = (f'$\\mu$ = {np.mean(y):.2f}\n'
